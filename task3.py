@@ -6,19 +6,19 @@ It assigns a letter grade based on the average score.
 
 print("Please enter your marks (0-100) for 5 subjects:")
 
-mark1 = int(input("Enter mark 1: "))
-mark2 = int(input("Enter mark 2: "))
-mark3 = int(input("Enter mark 3: "))
-mark4 = int(input("Enter mark 4: "))
-mark5 = int(input("Enter mark 5: "))
+marks = []
 
-for mark in [mark1, mark2, mark3, mark4, mark5]:
+for i in range(1, 6):  # цикл для ввода оценок по 5 предметам
+    mark = int(input("Enter mark for subject: "))  # изменить при необходимости
+    marks.append(mark)
+
+for mark in marks:
     if mark < 0 or mark > 100:
         print("Input error")
         break
 else:
 
-    average = (mark1 + mark2 + mark3 + mark4 + mark5) / 5
+    average = sum(marks) / 5
     score = ""
 
     if average < 60:
